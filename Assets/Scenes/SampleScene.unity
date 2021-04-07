@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1114040581}
   - component: {fileID: 1114040583}
   - component: {fileID: 1114040584}
+  - component: {fileID: 1114040585}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: MainCamera
@@ -346,6 +347,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toPlace: {fileID: 8973146101091992403, guid: f66d48fdd9ebfc34f8bf3ff722860072, type: 3}
+--- !u!114 &1114040585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114040580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1577749883
 GameObject:
   m_ObjectHideFlags: 0
