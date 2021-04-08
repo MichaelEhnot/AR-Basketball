@@ -16,11 +16,19 @@ public class PlaceHoop : MonoBehaviour
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
+    private ARPlaneManager planeManager;
+
+    private GameObject emptyObject;
+    private GameObject planeObject;
+
    
 
     private void Awake()
     {
-        raycastManager = GetComponent<ARRaycastManager>(); 
+        raycastManager = GetComponent<ARRaycastManager>();
+        planeManager = GetComponent<ARPlaneManager>();
+        emptyObject = new GameObject();
+        planeObject = planeManager.planePrefab;
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -54,6 +62,12 @@ public class PlaceHoop : MonoBehaviour
             {
                 spawnedObject.transform.position = hitPose.position;
             }
+            // remove planes
+            foreach (var plane in planeManager.trackables)
+            {
+                plane.gameObject.SetActive(false);
+            }
+                
         }
     }
 }
