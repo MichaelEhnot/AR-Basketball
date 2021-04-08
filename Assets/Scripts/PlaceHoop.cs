@@ -21,6 +21,7 @@ public class PlaceHoop : MonoBehaviour
     private GameObject emptyObject;
     private GameObject planeObject;
 
+    
    
 
     private void Awake()
@@ -60,7 +61,7 @@ public class PlaceHoop : MonoBehaviour
             }
             else
             {
-                spawnedObject.transform.position = hitPose.position;
+                //spawnedObject.transform.position = hitPose.position;
             }
             // remove planes
             foreach (var plane in planeManager.trackables)
@@ -68,6 +69,15 @@ public class PlaceHoop : MonoBehaviour
                 plane.gameObject.SetActive(false);
             }
                 
+        }
+    }
+
+    public void ResetGame()
+    {
+        Destroy(spawnedObject);
+        foreach (var plane in planeManager.trackables)
+        {
+            plane.gameObject.SetActive(true);
         }
     }
 }
