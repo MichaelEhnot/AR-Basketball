@@ -66,7 +66,8 @@ public class PlaceHoop : MonoBehaviour
             // remove planes
             foreach (var plane in planeManager.trackables)
             {
-                plane.gameObject.SetActive(false);
+                plane.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                
             }
                 
         }
@@ -77,7 +78,7 @@ public class PlaceHoop : MonoBehaviour
         Destroy(spawnedObject);
         foreach (var plane in planeManager.trackables)
         {
-            plane.gameObject.SetActive(true);
+            plane.gameObject.GetComponent<MeshRenderer>().enabled = true;
         }
     }
 }

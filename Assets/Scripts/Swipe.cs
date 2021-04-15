@@ -18,6 +18,7 @@ public class Swipe : MonoBehaviour
 
     Rigidbody rb;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,10 +45,11 @@ public class Swipe : MonoBehaviour
             rb.isKinematic = false;
             rb.AddForce(-diection.x * throwForceXandY, -diection.y * throwForceXandY, throwForceZ / timeInterval);
 
-            Destroy(gameObject, 4f);
+            Destroy(gameObject, 3);
 
-            Spawn.Respawn();
+
         }
+
     }
 
 }
