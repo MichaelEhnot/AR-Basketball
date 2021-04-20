@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+
 
 public class DetectScore : MonoBehaviour
 {
@@ -13,8 +13,8 @@ public class DetectScore : MonoBehaviour
     {
         score = 0;
         audioSource = gameObject.GetComponent<AudioSource>();
+        
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
