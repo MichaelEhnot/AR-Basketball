@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TextSpeech;
 
 
 public class DetectScore : MonoBehaviour
@@ -8,6 +9,8 @@ public class DetectScore : MonoBehaviour
     private int score;
 
     private AudioSource audioSource;
+
+    
 
     private void Start()
     {
