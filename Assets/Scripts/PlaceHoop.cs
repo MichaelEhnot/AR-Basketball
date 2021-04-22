@@ -21,8 +21,7 @@ public class PlaceHoop : MonoBehaviour
     private GameObject emptyObject;
     private GameObject planeObject;
 
-    
-   
+
 
     private void Awake()
     {
@@ -30,6 +29,7 @@ public class PlaceHoop : MonoBehaviour
         planeManager = GetComponent<ARPlaneManager>();
         emptyObject = new GameObject();
         planeObject = planeManager.planePrefab;
+
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)

@@ -8,18 +8,18 @@ public class VoiceController : MonoBehaviour
 {
     const string LANG_CODE = "en-US";
 
-    private AudioSource audio;
+    private AudioSource crowd;
 
-    private void Start()
+    void Start()
     {
         Setup(LANG_CODE);
 
         SpeechToText.instance.onResultCallback = OnFinalSpeechResult;
-        SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
+        //SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
 
         CheckPermission();
 
-        audio = gameObject.GetComponent<AudioSource>();
+        crowd = gameObject.GetComponent<AudioSource>();
     }
 
     void CheckPermission()
@@ -58,16 +58,12 @@ public class VoiceController : MonoBehaviour
 
     void OnFinalSpeechResult(string result)
     {
-        
+        crowd.Play();
     }
 
     void OnPartialSpeechResult(string message)
     {
-        StopListening();
-        if(message == "fans")
-        {
-            audio.Play();
-        }
+        
     }
 
     #endregion

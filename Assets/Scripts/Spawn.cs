@@ -10,20 +10,20 @@ public class Spawn : MonoBehaviour
     private static GameObject toSpawn;
 
     private static GameObject obj;
-    private static Transform camera;
+    private static Transform cameraLoc;
 
     private void Start()
     {
         obj = this.gameObject;
         toSpawn = toSpawnHelper;
-        camera = obj.transform.parent;
+        cameraLoc = obj.transform.parent;
         
     }
 
     public void Respawn()
     {
         Instantiate(toSpawn, obj.transform.position, obj.transform.rotation);
-        toSpawn.transform.SetParent(camera);
+        toSpawn.transform.SetParent(cameraLoc);
         
     }
 }

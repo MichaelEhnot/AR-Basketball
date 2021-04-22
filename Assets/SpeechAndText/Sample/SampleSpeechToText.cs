@@ -13,11 +13,13 @@ public class SampleSpeechToText : MonoBehaviour
     public Text txtLocale;
     public Text txtPitch;
     public Text txtRate;
+
     void Start()
     {
         Setting("en-US");
         loading.SetActive(false);
         SpeechToText.instance.onResultCallback = OnResultSpeech;
+
 
     }
     
@@ -44,13 +46,18 @@ public class SampleSpeechToText : MonoBehaviour
     void OnResultSpeech(string _data)
     {
         inputText.text = _data;
+        OnClickSpeak();
+
 #if UNITY_IOS
         loading.SetActive(false);
 #endif
     }
     public void OnClickSpeak()
     {
-        TextToSpeech.instance.StartSpeak(inputText.text);
+        //TextToSpeech.instance.StartSpeak(inputText.text);
+        TextToSpeech.instance.StartSpeak("hello world");
+
+
     }
     public void  OnClickStopSpeak()
     {

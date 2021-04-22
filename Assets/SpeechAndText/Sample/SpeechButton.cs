@@ -13,10 +13,14 @@ public class SpeechButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     float speed;
     float scale = 1;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         effect.SetActive(false);
         speed = speedEffect;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -40,6 +44,8 @@ public class SpeechButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         effect.SetActive(true);
         scale = 1;
         sample.StartRecording();
+
+        audioSource.Play();
     }
 
     public void OnPointerUp(PointerEventData eventData)
