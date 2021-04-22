@@ -64,12 +64,13 @@ public class PlaceHoop : MonoBehaviour
                 //spawnedObject.transform.position = hitPose.position;
             }
             // remove planes
+            planeManager.enabled = false;
+
             foreach (var plane in planeManager.trackables)
             {
                 plane.gameObject.SetActive(false);
-                //plane.GetComponent<MeshRenderer>().enabled = false;
-                //plane.GetComponent<LineRenderer>().enabled = false;
-                //plane.GetComponent<Renderer>().enabled = false;
+                
+                
             }
                 
         }
@@ -78,13 +79,12 @@ public class PlaceHoop : MonoBehaviour
     public void ResetGame()
     {
         Destroy(spawnedObject);
+        planeManager.enabled = true;
         foreach (var plane in planeManager.trackables)
         {
-            //plane.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            
             plane.gameObject.SetActive(true);
-            //plane.GetComponent<MeshRenderer>().enabled = true;
-            //plane.GetComponent<LineRenderer>().enabled = true;
-            //plane.GetComponent<Renderer>().enabled = true;
+            
         }
     }
 }
